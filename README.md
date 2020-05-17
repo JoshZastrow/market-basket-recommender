@@ -50,7 +50,12 @@ This is the "front page" of the project. Provide information for the audience an
 - experimentation approach
 - conclusions / results. 
 
-The content can be made up of written explanations, tables and data visualizations. For deliverabels that require many lines of code, please call outputs only, such as figures and tables either through IO commands (load pandas table, load .png file) or by a module function kept in `/models/utils.py`.
+The content can be made up of written explanations, tables and data visualizations. For deliverables that require many lines of code, please reduce it by:
+
+1) loading the outputs only, such as figures and tables through IO commands (load pandas table, load .png file), 
+2) calling a function from within a module such as `/models/utils.py`.
+
+or any other snazzy methods you know.
 
 ### Notebooks directory holds all the prototyping and development code
 
