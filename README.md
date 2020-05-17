@@ -6,6 +6,8 @@ Hello, this is a repo for the Instacart market basket challenge on Kaggle. It co
 ### Explore various recommender system implementations
 The motivation for this project is to build working knowledge on designing and implementing recommender systems. We are working with real business data on actual business problems, so the design of this project is also a case study in a sense. The intention of this project is to be fun, a fast track to mastery through learning, and directly applicable to current industry challenges.
 
+### Refine the framework for appling Machine Learning and Data Science
+There are mental models that are really handy for framing business problems as prediction problems. There are also frameworks that allow you to get to a quality minimum-viable-ML-product quickly. This project is an opportunity to solidify these learnings and battle test them with low risk. Be bold and test your knowledge!
 
 ### Generate insightful and practical information from the data
 This project is intended to simulate a real world challenge. So the deliverables on this project should provide actionable decisions for the client. Depending on your focus, the client could be a non-technical stake holder, another software application, or a future contributor. 
@@ -14,6 +16,9 @@ This project is intended to simulate a real world challenge. So the deliverables
 # Goals
 ### At least one end-to-end pipeline of a recommender model
 The main focus here is to build recommender models. At least one will be considered a success
+
+### A distilled data science story that walks the user through the problem and solution
+I will refer to the familiar saying here--it's not what you know, it's what you show. Strive to frame the problem to it's simplest scope, explain the methodology, and provide a solution. The goal is to make all this simple, interesting and concrete--backed by solid reasoning and telling visualizations.
 
 # Anti-Goals
 ### A collection of unfinished, unclear and unusable code
