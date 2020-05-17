@@ -1,3 +1,7 @@
+# Instacart Market Basket Analysis Challenge
+
+Hello, this is a repo for the Instacart market basket challenge on Kaggle. It contains research and code related to designing a recommender system for shopping preferences. Background can be found here: https://www.kaggle.com/c/instacart-market-basket-analysis
+
 # Why?
 ### Explore various recommender system implementations
 The motivation for this project is to build working knowledge on designing and implementing recommender systems. We are working with real business data on actual business problems, so the design of this project is also a case study in a sense. The intention of this project is to be fun, a fast track to mastery through learning, and directly applicable to current industry challenges.
