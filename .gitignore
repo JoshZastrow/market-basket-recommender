@@ -1,0 +1,14 @@
+# Environments
+venv
+
+# Data
+data/*
+.metaflow/
+
+# Metadata
+.vscode
+.ipynb_checkpoints
+__pycache__
+
+# Credentials
+.env
