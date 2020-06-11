@@ -4,6 +4,7 @@ venv
 # Data
 data/*
 .metaflow/
+*.csv
 
 # Metadata
 .vscode
