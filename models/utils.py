@@ -31,7 +31,6 @@ class KaggleData:
         return join(self.destination_dir, self.source_filename.split("/")[-1])
 
 
-    
 def download_data(directory):
     
     if dirname(directory) != 'data':

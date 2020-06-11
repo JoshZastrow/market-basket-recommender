@@ -18,6 +18,7 @@ if not os.getenv('APP_DIRECTORY'):
     
 APP_DIRECTORY = os.getenv('APP_DIRECTORY')
 
+from features import UserProduct
 
 class BaselineModel(FlowSpec):
     datasets = [
@@ -36,19 +37,42 @@ class BaselineModel(FlowSpec):
         dataframes = download_data(APP_DIRECTORY)
         
         self.aisles = pd.read_csv(dataframes['aisles'])
-        self.orders = pd.read_csv(dataframes['orders'])
-        self.departments = pd.read_csv(dataframes['departments'])
-        self.products = pd.read_csv(dataframes['products'])
-        self.opt = pd.read_csv(dataframes['order-products-train'])
-        self.opp = pd.read_csv(dataframes['order-products-prior'])
+#         self.orders = pd.read_csv(dataframes['orders'])
+#         self.departments = pd.read_csv(dataframes['departments'])
+#         self.products = pd.read_csv(dataframes['products'])
+        self.order_products_train = pd.read_csv(dataframes['order-products-train'])
+        self.order_products_prior = pd.read_csv(dataframes['order-products-prior'])
         self.sample = pd.read_csv(dataframes['sample-submission'])
+        
+        self.next(self.create_features)
+        
+    @step
+    def create_features(self):
+        self.df = pd.merge(
+                self.orders,
+                self.order_products_prior, 
+                left_on='order_id', 
+                right_on='order_id',
+            )
+            
+        self.features = (
+            self.df
+            .groupby('user_id')
+            .apply(UserProduct.purchase_frequency)
+        )
+        
+        self.target = (
+            self.df
+            .set_index(['user_id', 'order_id', 'product_id'])
+            .loc[:, 'reordered']
+        )
         
         self.next(self.end)
         
     @step
     def end(self):
         """Completion message"""
-        print('Data Downloaded!')
+        print('Feature Created!')
         
 if __name__ == '__main__':
     BaselineModel()
